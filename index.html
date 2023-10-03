@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Para practicar</title>
+        <style>
+            body{
+                font-family: 'Lucida Grande', monospace;
+            }
+            header div{
+                padding:.5rem 0;
+            }
+            summary {
+                padding: 0.25rem 0;
+                font-weight: bold;
+            }
+            details {
+                padding: 0.25rem 0;
+            }
+
+            details iframe {
+                padding-bottom: 2rem;
+                border-bottom: 1px solid black;
+            }
+            .naranja {
+                background: orange;
+            }
+            .verde {
+                background: palegreen;
+            }
+            .azul {
+                background: skyblue;
+            }
+            .marron {
+                background: sandybrown;
+            }
+
+            footer{
+                padding:2rem 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div><h1>🤖 Marque un kyū (級)</h1></div>
+            <div><input type="radio" name="selecciona" value="quinto" />Gokyū (五級)</div>
+            <div><input type="radio" name="selecciona" value="cuarto" />Yonkyū (四級)</div>
+            <div><input type="radio" name="selecciona" value="tercero" />Sankyū (三級)</div>
+            <div><input type="radio" name="selecciona" value="segundo" />Nikyū (二級)</div>
+            <div><input type="radio" name="selecciona" value="primero" />Shokyū (一級)</div>
+        </header>
+        <section></section>
+        <footer>合氣<del>道</del></footer>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"
+            integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            var datos;
+            var examen = { quinto: [], cuarto: [], tercero: [], segundo: [], primero: [] };
+            const about = document.querySelector("section");
+            Papa.parse("https://raw.githubusercontent.com/profesorfaco/aki/main/data.csv", {
+                download: true,
+                header: true,
+                dynamicTyping: true,
+                complete: function (results) {
+                    datos = results.data;
+                    console.log(datos);
+                    datos.forEach((d, i) => {
+                        if (d.kyu == 5) {
+                            examen.quinto.push(d);
+                        }
+                        if (d.kyu >= 4) {
+                            examen.cuarto.push(d);
+                        }
+                        if (d.kyu >= 3) {
+                            examen.tercero.push(d);
+                        }
+                        if (d.kyu >= 2) {
+                            examen.segundo.push(d);
+                        }
+                        examen.primero.push(d);
+                    });
+                    console.log(examen);
+
+                    function compatibilidad(valor) {
+                        var respuesta;
+
+                        if (valor == "quinto") {
+                            about.innerHTML = "<h3>Quinto kyū ~ cinturón amarillo</h3>";
+                            examen.quinto.forEach((x) => {
+                                if (x.embedded != null) {
+                                    respuesta = `<p>Esto se podría resolver más o menos así</p>${x.embedded}`;
+                                }
+                                else {
+                                    respuesta = `<p>No hay video. El robot lo siente mucho.</p>`;
+                                }
+
+                                about.innerHTML += `<details><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                            });
+                        } else if (valor == "cuarto") {
+                            about.innerHTML = "<h3>Cuarto kyū ~ cinturón naranja</h3>";
+                            examen.cuarto.forEach((x) => {
+                                if (x.embedded != null) {
+                                    respuesta = `<p>Esto se podría resolver más o menos así</p>${x.embedded}`;
+                                }
+                                else {
+                                    respuesta = `<p>No hay video. El robot lo siente mucho.</p>`;
+                                }
+
+                                if (x.kyu == 4) {
+                                    about.innerHTML += `<details class="naranja"><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                } else {
+                                    about.innerHTML += `<details><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                }
+                            });
+                        } else if (valor == "tercero") {
+                            about.innerHTML = "<h3>Tercer kyū ~ cinturón verde</h3>";
+                            examen.tercero.forEach((x) => {
+                                if (x.embedded != null) {
+                                    respuesta = `<p>Esto se podría resolver más o menos así</p>${x.embedded}`;
+                                }
+                                else {
+                                    respuesta = `<p>No hay video. El robot lo siente mucho.</p>`;
+                                }
+
+                                if (x.kyu == 3) {
+                                    about.innerHTML += `<details class="verde"><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                } else {
+                                    about.innerHTML += `<details><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                }
+                            });
+                        } else if (valor == "segundo") {
+                            about.innerHTML = "<h3>Segundo kyū ~ cinturón azul</h3>";
+                            examen.segundo.forEach((x) => {
+                                if (x.embedded != null) {
+                                    respuesta = `<p>Esto se podría resolver más o menos así</p>${x.embedded}`;
+                                }
+                                else {
+                                    respuesta = `<p>No hay video. El robot lo siente mucho.</p>`;
+                                }
+
+                                if (x.kyu == 2) {
+                                    about.innerHTML += `<details class="azul"><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                } else {
+                                    about.innerHTML += `<details><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                }
+                            });
+                        } else {
+                            about.innerHTML = "<h3>Primer kyū ~ cinturón marrón</h3>";
+                            examen.primero.forEach((x) => {
+                                if (x.embedded != null) {
+                                    respuesta = `<p>Esto se podría resolver más o menos así</p>${x.embedded}`;
+                                }
+                                else {
+                                    respuesta = `<p>No hay video. El robot lo siente mucho.</p>`;
+                                }
+
+                                if (x.kyu == 1) {
+                                    about.innerHTML += `<details class="marron"><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                } else {
+                                    about.innerHTML += `<details><summary>(${x.waza}) ${x.taijutsu}</summary>${respuesta}</details>`;
+                                }
+                            });
+                        }
+                    }
+
+                    const seleccionado = document.querySelectorAll('input[name="selecciona"]');
+
+                    seleccionado.forEach((i) => {
+                        i.addEventListener("change", function () {
+                            var valor = this.value;
+                            if (valor !== "todos") {
+                                console.log(valor);
+                                compatibilidad(valor);
+                            } else {
+                                window.location.reload();
+                            }
+                        });
+                    });
+                },
+            });
+        </script>
+    </body>
+</html>
