@@ -108,16 +108,16 @@
                     })
                     console.log(seleccion);
                     seleccion.forEach(s=>{
-                        if(s.kyu == 5){
-                        tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm quinto"><div class="card-body"><p class="small">${s.waza}</p><details><summary>${s.taijutsu}</summary>${respuesta(s)}</details></div></div></article>`;
-                        } else if(s.kyu == 4){
-                        tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm cuarto"><div class="card-body"><p class="small">${s.waza}</p><details><summary>${s.taijutsu}</summary>${respuesta(s)}</details></div></div></article>`;
-                        } else if(s.kyu == 3){
-                        tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm tercero"><div class="card-body"><p class="small">${s.waza}</p><details><summary>${s.taijutsu}</summary>${respuesta(s)}</details></div></div></article>`;
-                        } else if(s.kyu == 2){
-                        tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm segundo"><div class="card-body"><p class="small">${s.waza}</p><details><summary>${s.taijutsu}</summary>${respuesta(s)}</details></div></div></article>`;
+                        if (s.kyu == 5) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm quinto"><div class="card-body"><p class="small m-0 p-0 text-uppercase">${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        } else if (s.kyu == 4) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm cuarto"><div class="card-body"><p class="small m-0 p-0 text-uppercase">${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        } else if (s.kyu == 3) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm tercero"><div class="card-body"><p class="small m-0 p-0 text-uppercase">${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
+                        } else if (s.kyu == 2) {
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm segundo"><div class="card-body"><p class="small m-0 p-0 text-uppercase">${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
                         } else {
-                        tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm primero"><div class="card-body"><p class="small">${s.waza}</p><details><summary>${s.taijutsu}</summary>${respuesta(s)}</details></div></div></article>`;
+                            tecnicas.innerHTML += `<article class="col mb-3"><div class="card border-0 shadow-sm primero"><div class="card-body"><p class="small m-0 p-0 text-uppercase">${s.waza}</p><h3 class="fs-4">${s.taijutsu}</h3>${respuesta(s)}</details></div></div></article>`;
                         }
                     })
                 }

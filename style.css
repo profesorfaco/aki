@@ -39,17 +39,12 @@
     color: rgba(255, 255, 255, 1);
 }
 
-summary{
-    font-weight: bold;
-    margin-bottom:.5rem;
-}
-
-.quinto details span,
-.cuarto details span,
-.tercero details span {
+.quinto span,
+.cuarto span,
+.tercero span {
     color: rgba(0, 0, 0, 0.5);
 }
-.segundo details span,
-.primero details span {
+.segundo span,
+.primero span {
     color: rgba(255, 255, 255, 0.5);
 }
