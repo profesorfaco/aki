@@ -1,0 +1,55 @@
+.active {
+    text-decoration: underline;
+}
+.quinto {
+    background: #FFF59D;
+}
+.cuarto {
+    background: #FFCC80;
+}
+.tercero {
+    background: #A5D6A7;
+}
+.segundo {
+    background: #034694;
+    color: #fff;
+}
+.primero {
+    background: #522e00;
+    color: #fff;
+}
+
+.quinto a,
+.cuarto a,
+.tercero a {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.quinto a:hover,
+.cuarto a:hover,
+.tercero a:hover {
+    color: rgba(0, 0, 0, 1);
+}
+.segundo a,
+.primero a {
+    color: rgba(255, 255, 255, 0.75);
+}
+.segundo a:hover,
+.primero a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+summary{
+    font-weight: bold;
+    margin-bottom:.5rem;
+}
+
+.quinto details span,
+.cuarto details span,
+.tercero details span {
+    color: rgba(0, 0, 0, 0.5);
+}
+.segundo details span,
+.primero details span {
+    color: rgba(255, 255, 255, 0.5);
+}
