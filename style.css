@@ -1,50 +1,86 @@
 .active {
     text-decoration: underline;
 }
-.quinto {
-    background: #FFF59D;
+/*quinto*/
+.fondo-5 {
+    background: rgba(255, 179, 0, .1)
 }
-.cuarto {
-    background: #FFCC80;
+.texto-5{
+    color:rgb(255, 179, 0);
 }
-.tercero {
-    background: #A5D6A7;
+.bi-5-circle-fill{
+    fill:rgba(255, 179, 0);
 }
-.segundo {
-    background: #034694;
+/*cuarto*/
+.fondo-4 {
+    background: rgba(244, 81, 30,.1);
+}
+.texto-4{
+    color:rgb(244, 81, 30);
+}
+.bi-4-circle-fill{
+    fill:rgb(244, 81, 30);
+}
+/*tercero*/
+.fondo-3 {
+    background:rgba(67, 160, 71,.1);
+}
+.texto-3{
+    color:rgb(67, 160, 71);
+}
+.bi-3-circle-fill{
+    fill:rgb(67, 160, 71);
+}
+/*segundo*/
+.fondo-2 {
+    background:rgb(13, 71, 161,.1)
+}
+.texto-2{
+    color:rgb(13, 71, 161)
+}
+.bi-2-circle-fill{
+    fill:rgb(13, 71, 161)
+}
+/*segundo*/
+.fondo-1 {
+    background: #5D4037;
     color: #fff;
 }
-.primero {
-    background: #522e00;
-    color: #fff;
+.bi-1-circle-fill{
+    fill:#5D4037;
 }
-
-.quinto a,
-.cuarto a,
-.tercero a {
+.fondo-5 a,
+.fondo-4 a,
+.fondo-3 a,
+.fondo-2 a, {
     color: rgba(0, 0, 0, 0.75);
 }
 
-.quinto a:hover,
-.cuarto a:hover,
-.tercero a:hover {
+.fondo-5 a:hover,
+.fondo-4 a:hover,
+.fondo-3 a:hover,
+.fondo-2 a:hover {
     color: rgba(0, 0, 0, 1);
 }
-.segundo a,
-.primero a {
+.fondo-1 a {
     color: rgba(255, 255, 255, 0.75);
 }
-.segundo a:hover,
-.primero a:hover {
+.fondo-1 a:hover {
     color: rgba(255, 255, 255, 1);
 }
 
-.quinto span,
-.cuarto span,
-.tercero span {
+.fondo-5 span,
+.fondo-4 span,
+.fondo-3 span,
+.fondo-2 span {
     color: rgba(0, 0, 0, 0.5);
 }
-.segundo span,
-.primero span {
+
+.fondo-1 span {
     color: rgba(255, 255, 255, 0.5);
+}
+
+nav{
+    backdrop-filter: blur(10px);
+    background:rgba(255,255,255,.75);
 }
