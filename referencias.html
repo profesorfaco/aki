@@ -60,24 +60,13 @@
         <div class="mt-5 mb-2">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="my-5 display-5">Fuentes</h2>
+                    <h2 class="my-5 display-5">Referencias</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <p>https://es.wikipedia.org/wiki/Técnicas_de_aikidō</p>
-                    <p>https://www.mushindojosbd.com/buki-waza</p>
-                    <p>https://es.wikipedia.org/wiki/Aikidō</p>
-                    <p>https://www.aikidoelda.es/fundamentos-pr%C3%A1cticos-del-aikido/</p>
-                    <p>https://aikidoenlaplaya.wordpress.com/tecnicas/shiho-nage/</p>
-                    <p>https://aikidoenlaplaya.wordpress.com/tecnicas/ikkyo-%e4%b8%80%e6%95%99/</p>
-                    <p>https://aikidoenlaplaya.wordpress.com/tecnicas/nikyo/</p>
-                    <p>https://aikidoenlaplaya.wordpress.com/tecnicas/yonkyo/</p>
-                    <p>https://aikidoenlaplaya.wordpress.com/tecnicas/gokyo/</p>
-                    <p>https://aikidoenlaplaya.wordpress.com/tecnicas/irimi-nage/</p>
-                    <p>https://aikidoenlaplaya.wordpress.com/tecnicas/kote-gaeshi/</p>
-                    <p>https://www.youtube.com/@clubaikidolleida8610/playlists</p>
-                    <p>https://www.youtube.com/@clubaikidolleida8610/playlists/<p>
+                    <ul id="todas">
+                    </ul>
                 </div>
             </div>
         </main>
@@ -94,5 +83,79 @@
         </footer>
         <!--La biblioteca JS de Bootstrap-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script>
+            
+const referencias = [
+{
+    nombre:"Christian Tissier Aikido Principes Et Applications Volume 1 Immobilisations - YouTube",
+    url:"https://youtu.be/PV-BY95N5NI?feature=shared"
+},
+{
+    nombre:"Christian Tissier Aikido Principes Et Applications Volume 2 Projections - YouTube",
+    url:"https://youtu.be/LzJScCqOMb8?feature=shared"
+},
+{
+    nombre:"Christian Tissier Principles and applications Disc 3 Aplications - YouTube",
+    url:"https://youtu.be/6t7Duf2xuo4?feature=shared"
+},
+{
+    nombre:"Club Aikido Lleida - YouTube",
+    url:"https://www.youtube.com/@clubaikidolleida8610/playlists"
+},
+{
+    nombre:"Kote gaeshi - aikido hondartzan",
+    url:"https://aikidoenlaplaya.wordpress.com/tecnicas/kote-gaeshi/"
+},
+
+{
+    nombre:"Irimi nage - aikido hondartzan",
+    url:"https://aikidoenlaplaya.wordpress.com/tecnicas/irimi-nage/"
+},
+{
+    nombre:"Gokyo - aikido hondartzan",
+    url:"https://aikidoenlaplaya.wordpress.com/tecnicas/gokyo/"
+},
+{
+    nombre:"Yonkyo - aikido hondartzan",
+    url:"https://aikidoenlaplaya.wordpress.com/tecnicas/yonkyo/"
+},
+{
+    nombre:"Nikyo - aikido hondartzan",
+    url:"https://aikidoenlaplaya.wordpress.com/tecnicas/nikyo/"
+},
+{
+    nombre:"Ikkyo - aikido hondartzan",
+    url:"https://aikidoenlaplaya.wordpress.com/tecnicas/ikkyo-%e4%b8%80%e6%95%99/"
+},
+{
+    nombre:"Shiho nage - aikido hondartzan",
+    url:"https://aikidoenlaplaya.wordpress.com/tecnicas/shiho-nage/"
+},
+{
+    nombre:"Fundamentos prácticos del Aikido - Aikido en Elda",
+    url:"https://www.aikidoelda.es/fundamentos-pr%C3%A1cticos-del-aikido/"
+},
+{
+    nombre:"Aikidō - Wikipedia, la enciclopedia libre",
+    url:"https://es.wikipedia.org/wiki/Aikidō"
+},
+{
+    nombre:"Buki Waza | mushindojosabadell",
+    url:"https://www.mushindojosbd.com/buki-waza"
+},
+{
+    nombre:"Técnicas de aikidō - Wikipedia, la enciclopedia libre",
+    url:"https://es.wikipedia.org/wiki/Técnicas_de_aikidō"
+}
+]
+
+const ubicacion = document.querySelector("#todas");
+
+referencias.forEach(r=>{
+    ubicacion.innerHTML += `<li><a href="${r.url}" target="_blank">${r.nombre}</a></li>`
+})
+
+
+        </script>
     </body>
 </html>
